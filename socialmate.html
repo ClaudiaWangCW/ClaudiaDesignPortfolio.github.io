@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SocialMate - 競賽獲獎作品展示</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+        body { background-color: #0f172a; color: #f8fafc; line-height: 1.6; padding: 40px 20px; }
+        .container { max-width: 900px; margin: 0 auto; }
+        .back-link { display: inline-block; color: #38bdf8; text-decoration: none; margin-bottom: 25px; font-weight: 500; font-size: 0.95rem; }
+        .back-link:hover { text-decoration: underline; }
+        header { margin-bottom: 40px; }
+        h1 { font-size: 2.2rem; color: #f1f5f9; margin-bottom: 5px; }
+        .tagline { color: #38bdf8; font-size: 1.1rem; font-weight: 500; }
+        .highlight-text { font-size: 1.1rem; color: #cbd5e1; margin-bottom: 30px; background-color: #1e293b; padding: 18px; border-radius: 8px; border-left: 4px solid #38bdf8; }
+        h2.section-title { font-size: 1.4rem; color: #f1f5f9; margin: 40px 0 15px 0; display: flex; align-items: center; }
+        h2.section-title::after { content: ""; flex: 1; margin-left: 15px; height: 1px; background-color: #334155; }
+        .media-container { background-color: #1e293b; border: 1px solid #334155; border-radius: 12px; padding: 15px; margin-bottom: 30px; box-shadow: 0 10px 25px -5px rgba(0,0,0,0.3); }
+        .video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px; }
+        .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+        .figma-wrapper { position: relative; padding-bottom: 55%; height: 0; overflow: hidden; border-radius: 8px; }
+        .figma-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; background: #1e1e1e; }
+        .poster-img { width: 100%; height: auto; display: block; border-radius: 8px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-link">← 返回精選作品首頁</a>
+        <header>
+            <h1>行動應用創新賽 (MAIC) 決賽作品：《SocialMate》</h1>
+            <p class="tagline">✦ 全國決賽入圍作品 · 介面設計與動態影音說故事能力</p>
+        </header>
+        <p class="highlight-text">
+            💡 <b>作品簡介：</b>本作品針對現代人際社交課題設計。下方集中展示了在全國多媒體競賽中獲得決賽肯定的<b>大賽宣傳影片、完整的高擬真 App 原型（可直接點擊互動）以及參展海報</b>。
+        </p>
+        <h2 class="section-title">🎬 競賽宣傳影片 (Promotional Video)</h2>
+        <div class="media-container">
+            <div class="video-wrapper">
+                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+            </div>
+        </div>
+        <h2 class="section-title">📱 App 高擬真原型體驗 (Interactive Prototype)</h2>
+        <div class="media-container">
+            <div class="figma-wrapper">
+                <iframe src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2Fsample" allowfullscreen></iframe>
+            </div>
+        </div>
+        <h2 class="section-title">🖼️ 競賽參展海報 (Poster Design)</h2>
+        <div class="media-container">
+            <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=900&q=80" alt="SocialMate 海報" class="poster-img">
+        </div>
+    </div>
+</body>
+</html>
