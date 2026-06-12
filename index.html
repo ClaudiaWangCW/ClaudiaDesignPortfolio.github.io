@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Design & Multimedia Portfolio</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+        body { background-color: #0f172a; color: #f8fafc; line-height: 1.6; padding: 40px 20px; }
+        .container { max-width: 900px; margin: 0 auto; }
+        header { text-align: center; margin-bottom: 50px; border-bottom: 1px solid #334155; padding-bottom: 40px; }
+        h1 { font-size: 2.3rem; color: #38bdf8; margin-bottom: 12px; letter-spacing: 1px; }
+        p.subtitle { font-size: 1.1rem; color: #94a3b8; max-width: 650px; margin: 0 auto 20px auto; }
+        .tag { display: inline-block; background-color: #1e293b; color: #38bdf8; padding: 4px 12px; border-radius: 16px; font-size: 0.85rem; margin: 5px; border: 1px solid #334155; }
+        .badges-section { text-align: center; margin-bottom: 60px; background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); padding: 20px; border-radius: 12px; border: 1px solid #1e293b; }
+        .badge-title { font-size: 0.85rem; color: #64748b; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px; }
+        .badge-item { display: inline-block; color: #e2e8f0; font-size: 0.9rem; margin: 0 15px; font-weight: 500; }
+        .badge-item span { color: #10b981; margin-right: 5px; }
+        h2.section-title { font-size: 1.6rem; color: #f1f5f9; margin-bottom: 30px; border-left: 4px solid #38bdf8; padding-left: 12px; }
+        .project-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+        @media (max-width: 768px) { .project-grid { grid-template-columns: 1fr; } }
+        .project-link { text-decoration: none; color: inherit; display: block; }
+        .project-card { background-color: #1e293b; border-radius: 12px; overflow: hidden; border: 1px solid #334155; transition: all 0.3s ease; height: 100%; display: flex; flex-direction: column; }
+        .project-link:hover .project-card { transform: translateY(-6px); border-color: #38bdf8; box-shadow: 0 10px 20px -10px rgba(56, 189, 248, 0.3); }
+        .project-img-wrapper { background-color: #0b0f19; height: 200px; display: flex; align-items: center; justify-content: center; overflow: hidden; border-bottom: 1px solid #334155; }
+        .project-img { width: 100%; height: 100%; object-fit: cover; opacity: 0.85; transition: opacity 0.3s; }
+        .project-link:hover .project-img { opacity: 1; }
+        .project-info { padding: 25px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; }
+        .project-title { font-size: 1.3rem; color: #f8fafc; margin-bottom: 10px; }
+        .project-desc { color: #cbd5e1; font-size: 0.95rem; margin-bottom: 15px; text-align: justify; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+        .view-btn { display: inline-block; color: #38bdf8; font-size: 0.9rem; font-weight: 500; margin-top: auto; }
+        footer { text-align: center; margin-top: 80px; padding-top: 30px; border-top: 1px solid #334155; color: #64748b; font-size: 0.85rem; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>DIGITAL MULTIMEDIA PORTFOLIO</h1>
+            <p class="subtitle">專注於數位多媒體設計、UI/UX 產品原型開發與動態影音敘事。結合結構化邏輯思維與高階視覺審美，打造流暢的數位互動體驗。</p>
+            <div>
+                <span class="tag">UI/UX Design</span>
+                <span class="tag">Video Production</span>
+                <span class="tag">Python Programming</span>
+                <span class="tag">Digital Interaction</span>
+            </div>
+        </header>
+
+        <div class="badges-section">
+            <div class="badge-title">Professional Credentials</div>
+            <div class="badge-item"><span>✓</span> TOEIC 990/990 (L&R Perfect)</div>
+            <div class="badge-item"><span>✓</span> Google Project Management</div>
+            <div class="badge-item"><span>✓</span> Google IT Support Certificate</div>
+        </div>
+
+        <h2 class="section-title">Selected Works / 精選作品</h2>
+        
+        <div class="project-grid">
+            <a href="countbuddy.html" class="project-link">
+                <div class="project-card">
+                    <div class="project-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=600&q=80" alt="CountBuddy" class="project-img">
+                    </div>
+                    <div class="project-info">
+                        <div>
+                            <h3 class="project-title">畢業專題：《CountBuddy》遊戲化健身 App</h3>
+                            <p class="project-desc">融合使用者心理學與遊戲化機制的健身多媒體專案。包含完整 UI/UX Mockup、可互動 Prototype、海報設計與宣傳影片。</p>
+                        </div>
+                        <span class="view-btn">瀏覽完整作品案例 →</span>
+                    </div>
+                </div>
+            </a>
+
+            <a href="socialmate.html" class="project-link">
+                <div class="project-card">
+                    <div class="project-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=600&q=80" alt="SocialMate" class="project-img">
+                    </div>
+                    <div class="project-info">
+                        <div>
+                            <h3 class="project-title">MAIC 入圍決賽：《SocialMate》人際交流改善 App</h3>
+                            <p class="project-desc">針對現代人社交痛點設計的引導式社交陪伴工具。榮獲行動應用創新賽決賽肯定，呈現高水準的介面邏輯與動態影音說故事能力。</p>
+                        </div>
+                        <span class="view-btn">瀏覽完整作品案例 →</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <footer>
+            <p>© 2026 Built with structural thinking. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
