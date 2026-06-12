@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CountBuddy - 畢業專題展示</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+        body { background-color: #0f172a; color: #f8fafc; line-height: 1.6; padding: 40px 20px; }
+        .container { max-width: 900px; margin: 0 auto; }
+        .back-link { display: inline-block; color: #38bdf8; text-decoration: none; margin-bottom: 25px; font-weight: 500; font-size: 0.95rem; }
+        .back-link:hover { text-decoration: underline; }
+        header { margin-bottom: 40px; }
+        h1 { font-size: 2.2rem; color: #f1f5f9; margin-bottom: 5px; }
+        .tagline { color: #38bdf8; font-size: 1.1rem; font-weight: 500; }
+        .highlight-text { font-size: 1.1rem; color: #cbd5e1; margin-bottom: 30px; background-color: #1e293b; padding: 18px; border-radius: 8px; border-left: 4px solid #10b981; }
+        h2.section-title { font-size: 1.4rem; color: #f1f5f9; margin: 40px 0 15px 0; display: flex; align-items: center; }
+        h2.section-title::after { content: ""; flex: 1; margin-left: 15px; height: 1px; background-color: #334155; }
+        .media-container { background-color: #1e293b; border: 1px solid #334155; border-radius: 12px; padding: 15px; margin-bottom: 30px; box-shadow: 0 10px 25px -5px rgba(0,0,0,0.3); }
+        .video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px; }
+        .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+        .figma-wrapper { position: relative; padding-bottom: 55%; height: 0; overflow: hidden; border-radius: 8px; }
+        .figma-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; background: #1e1e1e; }
+        .poster-img { width: 100%; height: auto; display: block; border-radius: 8px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-link">← 返回精選作品首頁</a>
+        <header>
+            <h1>畢業專題：《CountBuddy》遊戲化健身 App</h1>
+            <p class="tagline">✦ 數位多媒體整合設計與影音開發</p>
+        </header>
+        <p class="highlight-text">
+            💡 <b>作品簡介：</b>本專案將傳統健身與趣味遊戲化機制深度結合。下方完整呈現了本專案的<b>宣傳短片、可現場操作的互動原型、以及展覽海報</b>，展現從視覺、動態影音到介面開發的數位多媒體整合實力。
+        </p>
+        <h2 class="section-title">🎬 宣傳影片觀賞 (Promotional Video)</h2>
+        <div class="media-container">
+            <div class="video-wrapper">
+                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+            </div>
+        </div>
+        <h2 class="section-title">📱 App 介面互動體驗 (Interactive Prototype)</h2>
+        <div class="media-container">
+            <div class="figma-wrapper">
+                <iframe src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2Fsample" allowfullscreen></iframe>
+            </div>
+        </div>
+        <h2 class="section-title">🖼️ 專案展覽海報設計 (Poster Design)</h2>
+        <div class="media-container">
+            <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=900&q=80" alt="CountBuddy 海報" class="poster-img">
+        </div>
+    </div>
+</body>
+</html>
