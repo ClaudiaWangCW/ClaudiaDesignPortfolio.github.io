@@ -14,14 +14,22 @@
         tailwind.config = {
             theme: {
                 extend: {
-                    colors: { brand: { canvas: '#FFFFFF', bgLight: '#F8FAFC', textMain: '#0F172A', textSub: '#475569', accent: '#0EA5E9' } },
+                    colors: { 
+                        brand: { 
+                            canvas: '#FFFFFF', 
+                            bgLight: '#FBFBFB', // 同步修正為溫潤的極簡暖灰
+                            textMain: '#0F172A', 
+                            textSub: '#475569', 
+                            accent: '#A3C6C4'   // 已成功套用你的質感主題色 
+                        } 
+                    },
                     fontFamily: { sans: ['SF Pro Display', 'Inter', 'Noto Sans TC', 'sans-serif'] }
                 }
             }
         }
     </script>
 </head>
-<body class="bg-brand-canvas text-brand-textMain font-sans antialiased">
+<body class="bg-brand-canvas text-brand-textMain font-sans antialiased selection:bg-brand-accent selection:text-white">
     <div id="root"></div>
 
     <script type="text/babel">
@@ -37,22 +45,21 @@
                     </nav>
 
                     <main class="max-w-6xl w-full mx-auto px-6 pt-6 pb-32 flex-grow">
-                        {/* 🌟 海報與標題開場風 - 已修正為 CountBuddy 的內容 */}
+                        {/* 🌟 海報與標題開場 */}
                         <section class="grid grid-cols-1 md:grid-cols-12 gap-12 items-center mb-32">
                             {/* 左側：海報主角牆 */}
                             <div class="md:col-span-5 bg-brand-bgLight p-3 rounded-2xl border border-slate-100 shadow-md">
-                                {/* 💡 提示：此處預留健身 App 海報圖片位置，你可以替換成你的海報路徑 */}
                                 <img src="images/CountBuddy-poster.jpg" alt="CountBuddy 大賽海報" class="w-full h-auto rounded-xl object-cover shadow-inner" />
                             </div>
 
                             {/* 右側：精簡專案資訊 */}
                             <div class="md:col-span-7 space-y-6">
-                                <span class="bg-sky-50 text-brand-accent px-3 py-1 rounded-full text-xs font-semibold tracking-wider uppercase border border-sky-100 inline-block">
+                                <span class="bg-slate-50 text-slate-500 px-3 py-1 rounded-full text-xs font-semibold tracking-wider uppercase border border-slate-200 inline-block">
                                     💪 畢業專題 手機應用程式結合穿戴式裝置
                                 </span>
                                 <h1 class="text-4xl md:text-5xl font-black tracking-tight text-brand-textMain">CountBuddy</h1>
                                 <p class="text-brand-textSub text-lg font-light leading-relaxed">
-                                    一款結合遊戲化養成與計次手環的運動 App ，讓使用者在居家運動中獲得即時回饋與成就感。每完成一次運動都能累積經驗值，推動「肌胸肉」角色成長與升級，讓訓練過程更有動力和趣味。透過長期使用，系統會自動整理每月的運動紀錄，幫助使用者掌握自己的訓練習慣與進步幅度。此外，AI體態分析功能讓使用者可上傳自己的照片，比較不同時期的體態改變，看見努力帶來的成果，建立持續運動的好習慣。 
+                                    一款結合遊戲化養成與計次手環的運動 App ，讓使用者在居家運動中獲得即時回饋與成就感。每完成一次運動都能累積經驗值，推動「肌胸肉」角色成長與升級，讓訓練過程更有動力和趣味。透過長期使用，系統會自動整理每月的運動紀錄，幫助使用者掌握自己的訓練習慣與進步幅度。此外，AI體體態分析功能讓使用者可上傳自己的照片，比較不同時期的體態改變，看見努力帶來的成果，建立持續運動的好習慣。
                                 </p>
                                 
                                 <div class="grid grid-cols-2 gap-4 pt-6 text-sm border-t border-slate-100">
@@ -69,7 +76,6 @@
                             <h3 class="text-xs uppercase tracking-widest text-slate-400 font-bold">🎬 宣傳影片</h3>
                             <div class="bg-brand-bgLight p-4 rounded-2xl border border-slate-100 shadow-sm">
                                 <div class="relative pb-[56.25%] h-0 overflow-hidden rounded-xl bg-black">
-                                    {/* 💡 提示：請將下方 src 換成你的 CountBuddy 宣傳影片 YouTube 連結 */}
                                     <iframe class="absolute top-0 left-0 w-full h-full border-0" src="https://www.youtube.com/embed/qM0eeYtPOug" allowfullscreen></iframe>
                                 </div>
                             </div>
@@ -79,13 +85,12 @@
                         <div class="space-y-6 mb-24">
                             <h3 class="text-xs uppercase tracking-widest text-slate-400 font-bold">📱 App 功能架構與 Mockup 展示</h3>
                             <div class="bg-brand-bgLight p-6 md:p-12 rounded-2xl border border-slate-100 space-y-8 flex flex-col items-center">
-                                {/* 💡 提示：請更換成你導出的 CountBuddy Mockup 截圖路徑 */}
                                 <img src="images/CountBuddy-FunctionalMap.png" alt="CountBuddy UI 設計圖 1" class="w-full max-w-4xl h-auto rounded-lg shadow-sm" />
                                 <img src="images/CountBuddy-Mockup.png" alt="CountBuddy UI 設計圖 2" class="w-full max-w-4xl h-auto rounded-lg shadow-sm" />
                             </div>
                         </div>
 
-                        {/* 行動呼籲 */}
+                        {/* 3. 互動原型（已更換為 CountBuddy 互動原型，並保留手機殼參數） */}
                         <div class="space-y-6 mb-24">
                             <h3 class="text-xs uppercase tracking-widest text-slate-400 font-bold">📱 CountBuddy 互動式原型展示</h3>
                             <div class="w-full max-w-sm mx-auto bg-brand-bgLight p-4 rounded-2xl border border-slate-100 flex flex-col items-center shadow-sm">
