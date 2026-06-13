@@ -45,34 +45,38 @@
                 <div class="min-h-screen flex flex-col justify-between">
                     {/* 導覽列 */}
                     <nav class="max-w-7xl w-full mx-auto px-6 py-8 flex justify-between items-center">
-                        <span class="text-xl font-black tracking-tight text-brand-textMain">CW</span>
+                        {/* 🌟 重新設計的 CW Logo：大寫極寬字距，中間帶有品牌色精緻圓點，極具設計師個性 */}
+                        <span class="text-xl font-black tracking-normal text-brand-textMain flex items-center select-none">
+                            C<span class="text-brand-accent mx-0.5">·</span>W
+                        </span>
                         <div class="space-x-8 text-sm font-medium text-brand-textSub">
                             <a href="index.html" class="text-brand-textMain border-b-2 border-brand-accent pb-1">我的作品</a>
                             <a href="#about" class="hover:text-brand-textMain transition-colors">關於我</a>
                         </div>
                     </nav>
 
-                    {/* Hero 區塊 */}
-                    <main class="max-w-7xl w-full mx-auto px-6 pt-20 pb-32 flex-grow">
-                        <motion.div 
-                            initial={{ opacity: 0, y: 30 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.8, ease: "easeOut" }}
-                            class="max-w-3xl mb-32"
-                        >
-                            <h2 class="text-xs uppercase tracking-[0.2em] text-brand-accent font-semibold mb-4"></h2>
-                            {/* 🌟 名字成功改為綠色並加上精緻底線 */}
-                            <h1 class="text-4xl md:text-6xl font-black tracking-tight leading-[1.15] text-brand-textMain mb-6">
-                                Hi!<br/>I'm <span class="text-brand-accent underline decoration-brand-accent underline-offset-8 decoration-2">Claudia Wang</span>
-                            </h1>
-                            {/* 🌟 修改為更具亮點的設計師定位宣言（Tagline） */}
-                            <p class="text-xl md:text-2xl font-light text-brand-textSub leading-relaxed">
-                                比起純粹的技術，我更在乎作品帶給使用者的體驗與感受。
-                            </p>
-                        </motion.div>
+                    {/* 主內容區：將所有元件收回同一個滿版天際線下，全面恢復原本乾淨的純白畫布底色 */}
+                    <main class="max-w-7xl w-full mx-auto px-6 pt-20 flex-grow">
+                        {/* Hero 區塊 */}
+                        <header class="pb-36">
+                            <motion.div 
+                                initial={{ opacity: 0, y: 30 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.8, ease: "easeOut" }}
+                                class="max-w-3xl"
+                            >
+                                <h2 class="text-xs uppercase tracking-[0.2em] text-brand-accent font-semibold mb-4"></h2>
+                                <h1 class="text-4xl md:text-6xl font-black tracking-tight leading-[1.15] text-brand-textMain mb-6">
+                                    Hi!<br/>I'm <span class="text-brand-accent underline decoration-brand-accent underline-offset-8 decoration-2">Claudia Wang</span>
+                                </h1>
+                                <p class="text-xl md:text-2xl font-light text-brand-textSub leading-relaxed">
+                                    比起純粹的技術，我更在乎作品帶給使用者的體驗與感受。
+                                </p>
+                            </motion.div>
+                        </header>
 
-                        {/* 作品列表 */}
-                        <section class="space-y-20">
+                        {/* 作品列表（🌟 移除 #E0E7E9 大底，回復原汁原味的極簡排版） */}
+                        <section class="space-y-20 pb-24">
                             <div class="flex items-center justify-between border-b border-slate-200 pb-4">
                                 <h2 class="text-xl font-bold tracking-tight">我的設計作品</h2>
                                 <span class="text-xs text-brand-textSub uppercase tracking-widest">01 — 02</span>
@@ -152,13 +156,11 @@
                             </div>
                         </section>
                       
-                        {/* 關於我 */}
-                        <section id="about" class="mt-32 border-t border-slate-100 pt-16 max-w-7xl space-y-20">
-                            
+                        {/* 關於我（🌟 已縮減 mt-20，讓橫線與上方作品集的斷層感完全消失，線條比例更完美） */}
+                        <section id="about" class="mt-8 border-t border-slate-100 pt-16 max-w-7xl space-y-20">
                             {/* 關於我個人基本資訊 */}
                             <div class="space-y-4">
                                 <h2 class="text-xs uppercase tracking-[0.2em] text-brand-accent font-semibold">關於我</h2>
-                                {/* 🌟 這裡加入了 max-w-3xl，限制內容寬度，解決大螢幕下視覺死板靠左的問題 */}
                                 <div class="space-y-3 max-w-3xl">
                                     <h3 class="text-2xl font-black tracking-tight text-brand-textMain">
                                         王雨晴 <span class="text-sm font-normal text-brand-textSub font-mono ml-2">Claudia Wang</span>
@@ -173,7 +175,6 @@
                             {/* 設計理念 */}
                             <div class="space-y-4 border-t border-slate-100/60 pt-12">
                                 <h2 class="text-xs uppercase tracking-[0.2em] text-brand-accent font-semibold">設計理念</h2>
-                                {/* 🌟 這裡也統一為 max-w-3xl，讓上下兩個區塊的右側邊界完美對齊 */}
                                 <div class="space-y-4 max-w-3xl">
                                     <p class="text-2xl md:text-3xl font-light tracking-tight leading-relaxed text-brand-textMain">
                                         「我相信設計不只是解決問題，也是在科技與人之間建立連結，並帶來好的使用體驗。」
