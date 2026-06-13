@@ -3,92 +3,208 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Digital Design & Multimedia Portfolio</title>
-    <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
-        body { background-color: #0f172a; color: #f8fafc; line-height: 1.6; padding: 40px 20px; }
-        .container { max-width: 900px; margin: 0 auto; }
-        header { text-align: center; margin-bottom: 50px; border-bottom: 1px solid #334155; padding-bottom: 40px; }
-        h1 { font-size: 2.3rem; color: #38bdf8; margin-bottom: 12px; letter-spacing: 1px; }
-        p.subtitle { font-size: 1.1rem; color: #94a3b8; max-width: 650px; margin: 0 auto 20px auto; }
-        .tag { display: inline-block; background-color: #1e293b; color: #38bdf8; padding: 4px 12px; border-radius: 16px; font-size: 0.85rem; margin: 5px; border: 1px solid #334155; }
-        .badges-section { text-align: center; margin-bottom: 60px; background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); padding: 20px; border-radius: 12px; border: 1px solid #1e293b; }
-        .badge-title { font-size: 0.85rem; color: #64748b; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px; }
-        .badge-item { display: inline-block; color: #e2e8f0; font-size: 0.9rem; margin: 0 15px; font-weight: 500; }
-        .badge-item span { color: #10b981; margin-right: 5px; }
-        h2.section-title { font-size: 1.6rem; color: #f1f5f9; margin-bottom: 30px; border-left: 4px solid #38bdf8; padding-left: 12px; }
-        .project-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
-        @media (max-width: 768px) { .project-grid { grid-template-columns: 1fr; } }
-        .project-link { text-decoration: none; color: inherit; display: block; }
-        .project-card { background-color: #1e293b; border-radius: 12px; overflow: hidden; border: 1px solid #334155; transition: all 0.3s ease; height: 100%; display: flex; flex-direction: column; }
-        .project-link:hover .project-card { transform: translateY(-6px); border-color: #38bdf8; box-shadow: 0 10px 20px -10px rgba(56, 189, 248, 0.3); }
-        .project-img-wrapper { background-color: #0b0f19; height: 200px; display: flex; align-items: center; justify-content: center; overflow: hidden; border-bottom: 1px solid #334155; }
-        .project-img { width: 100%; height: 100%; object-fit: cover; opacity: 0.85; transition: opacity 0.3s; }
-        .project-link:hover .project-img { opacity: 1; }
-        .project-info { padding: 25px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; }
-        .project-title { font-size: 1.3rem; color: #f8fafc; margin-bottom: 10px; }
-        .project-desc { color: #cbd5e1; font-size: 0.95rem; margin-bottom: 15px; text-align: justify; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
-        .view-btn { display: inline-block; color: #38bdf8; font-size: 0.9rem; font-weight: 500; margin-top: auto; }
-        footer { text-align: center; margin-top: 80px; padding-top: 30px; border-top: 1px solid #334155; color: #64748b; font-size: 0.85rem; }
-    </style>
+    <title>Claudia Wang | 介面設計作品集</title>
+    <!-- React & Babel CDN -->
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Framer Motion & Lucide Icons -->
+    <script src="https://unpkg.com/framer-motion@10.16.4/dist/framer-motion.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            canvas: '#FFFFFF',
+                            bgLight: '#F8FAFC',
+                            textMain: '#0F172A',
+                            textSub: '#475569',
+                            accent: '#0EA5E9'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['SF Pro Display', 'Inter', 'Noto Sans TC', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
 </head>
-<body>
-    <div class="container">
-        <header>
-            <h1>DIGITAL MULTIMEDIA PORTFOLIO</h1>
-            <p class="subtitle">專注於數位多媒體設計、UI/UX 產品原型開發與動態影音敘事。結合結構化邏輯思維與高階視覺審美，打造流暢的數位互動體驗。</p>
-            <div>
-                <span class="tag">UI/UX Design</span>
-                <span class="tag">Video Production</span>
-                <span class="tag">Python Programming</span>
-                <span class="tag">Digital Interaction</span>
-            </div>
-        </header>
+<body class="bg-brand-canvas text-brand-textMain font-sans antialiased selection:bg-brand-accent selection:text-white">
+    <div id="root"></div>
 
-        <div class="badges-section">
-            <div class="badge-title">Professional Credentials</div>
-            <div class="badge-item"><span>✓</span> TOEIC 990/990 (L&R Perfect)</div>
-            <div class="badge-item"><span>✓</span> Google Project Management</div>
-            <div class="badge-item"><span>✓</span> Google IT Support Certificate</div>
+    <script type="text/babel">
+        const { motion } = window.Motion;
+
+        function App() {
+            return (
+                <div class="min-h-screen flex flex-col justify-between">
+                    {/* 導覽列 */}
+                    <nav class="max-w-7xl w-full mx-auto px-6 py-8 flex justify-between items-center">
+                        <span class="text-xl font-black tracking-tight text-brand-textMain">CW</span>
+                        <div class="space-x-8 text-sm font-medium text-brand-textSub">
+                            <a href="index.html" class="text-brand-textMain border-b-2 border-brand-accent pb-1">我的作品</a>
+                            <a href="#about" class="hover:text-brand-textMain transition-colors">關於我</a>
+                        </div>
+                    </nav>
+
+                    {/* Hero 區塊 */}
+                    <main class="max-w-7xl w-full mx-auto px-6 pt-20 pb-32 flex-grow">
+                        <motion.div 
+                            initial={{ opacity: 0, y: 30 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8, ease: "easeOut" }}
+                            class="max-w-3xl mb-32"
+                        >
+                            <h2 class="text-xs uppercase tracking-[0.2em] text-brand-accent font-semibold mb-4"></h2>
+                            <h1 class="text-4xl md:text-6xl font-black tracking-tight leading-[1.15] text-brand-textMain mb-6">
+Hi!
+<br/>
+I'm Claudia Wang
+                            </h1>
+                            <p class="text-lg md:text-xl font-light text-brand-textSub leading-relaxed">
+                                我喜歡結合科技、視覺與使用者體驗，把想法轉化為容易理解且具有吸引力的數位作品。
+                            </p>
+                        </motion.div>
+
+                        {/* 作品列表 */}
+                        <section class="space-y-40">
+                            <div class="flex items-center justify-between border-b border-slate-200 pb-4">
+                                <h2 class="text-xl font-bold tracking-tight">我的作品</h2>
+                                <span class="text-xs text-brand-textSub uppercase tracking-widest">01 — 03</span>
+                            </div>
+
+                            <div class="space-y-32">
+                                {/* 作品 01: CountBuddy */}
+    <motion.div 
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.8 }}
+        class="group cursor-pointer bg-brand-bgLight rounded-2xl overflow-hidden border border-slate-200 transition-all duration-500 hover:border-slate-300 hover:shadow-[0_30px_60px_rgba(0,0,0,0.04)] p-6 flex flex-col"
+        onClick={() => window.location.href = 'countbuddy.html'}
+    >
+        {/* 上方：媒體展示區（模仿截圖無邊框置中） */}
+        <div class="bg-slate-950 rounded-xl overflow-hidden aspect-video flex justify-center items-center w-full shadow-inner">
+            <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=1200&q=80" alt="CountBuddy 健身 App" class="w-full h-full object-cover opacity-90 transition-opacity duration-500 group-hover:opacity-100" />
         </div>
-
-        <h2 class="section-title">Selected Works / 精選作品</h2>
         
-        <div class="project-grid">
-            <a href="countbuddy.html" class="project-link">
-                <div class="project-card">
-                    <div class="project-img-wrapper">
-                        <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=600&q=80" alt="CountBuddy" class="project-img">
-                    </div>
-                    <div class="project-info">
-                        <div>
-                            <h3 class="project-title">畢業專題：《CountBuddy》遊戲化健身 App</h3>
-                            <p class="project-desc">融合使用者心理學與遊戲化機制的健身多媒體專案。包含完整 UI/UX Mockup、可互動 Prototype、海報設計與宣傳影片。</p>
-                        </div>
-                        <span class="view-btn">瀏覽完整作品案例 →</span>
-                    </div>
-                </div>
-            </a>
-
-            <a href="socialmate.html" class="project-link">
-                <div class="project-card">
-                    <div class="project-img-wrapper">
-                        <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=600&q=80" alt="SocialMate" class="project-img">
-                    </div>
-                    <div class="project-info">
-                        <div>
-                            <h3 class="project-title">MAIC 入圍決賽：《SocialMate》人際交流改善 App</h3>
-                            <p class="project-desc">針對現代人社交痛點設計的引導式社交陪伴工具。榮獲行動應用創新賽決賽肯定，呈現高水準的介面邏輯與動態影音說故事能力。</p>
-                        </div>
-                        <span class="view-btn">瀏覽完整作品案例 →</span>
-                    </div>
-                </div>
-            </a>
+        {/* 下方：文字資訊區（模仿截圖與媒體包在同一個容器內） */}
+        <div class="pt-8 pb-4 px-2 space-y-4 flex-grow flex flex-col justify-between">
+            <div>
+                <h3 class="text-2xl font-black tracking-tight text-brand-textMain mb-3 group-hover:text-brand-accent transition-colors">
+                    Gamified Fitness App & Promotional Video / 遊戲化健身 App 暨宣傳短片
+                </h3>
+                <p class="text-brand-textSub text-sm md:text-base font-light leading-relaxed text-justify">
+                    本專案是一套融合使用者行為心理學與遊戲化機制的健身動態應用程式。為了解決使用者在運動初期的倦怠感，設計了直覺的任務打卡系統與客製化陪伴角色機制。除了主導完整的 UI/UX 介面設計（包含 Wireframe 與 High-Fi 原型）外，更獨立完成了分鏡腳本編排、動態影音剪輯與視覺特效包裝之宣傳短片，展現全方位的多媒體說故事能力。
+                </p>
+            </div>
+            
+            {/* 標籤列 */}
+            <div class="flex flex-wrap gap-2 pt-2">
+                <span class="bg-white text-slate-600 border border-slate-200 rounded px-3 py-1 text-xs font-medium font-mono">Figma</span>
+                <span class="bg-white text-slate-600 border border-slate-200 rounded px-3 py-1 text-xs font-medium font-mono">UI/UX Design</span>
+                <span class="bg-white text-slate-600 border border-slate-200 rounded px-3 py-1 text-xs font-medium font-mono">Final Cut Pro</span>
+                <span class="bg-white text-slate-600 border border-slate-200 rounded px-3 py-1 text-xs font-medium font-mono">Motion Graphics</span>
+            </div>
         </div>
+    </motion.div>
 
-        <footer>
-            <p>© 2026 Built with structural thinking. All rights reserved.</p>
-        </footer>
-    </div>
+
+    {/* 作品 02: SocialMate */}
+    <motion.div 
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.8 }}
+        class="group cursor-pointer bg-brand-bgLight rounded-2xl overflow-hidden border border-slate-200 transition-all duration-500 hover:border-slate-300 hover:shadow-[0_30px_60px_rgba(0,0,0,0.04)] p-6 flex flex-col"
+        onClick={() => window.location.href = 'socialmate.html'}
+    >
+        {/* 上方：媒體展示區 */}
+        <div class="bg-slate-950 rounded-xl overflow-hidden aspect-video flex justify-center items-center w-full shadow-inner">
+            <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1200&q=80" alt="SocialMate 社交 App" class="w-full h-full object-cover opacity-90 transition-opacity duration-500 group-hover:opacity-100" />
+        </div>
+        
+        {/* 下方：文字資訊區 */}
+        <div class="pt-8 pb-4 px-2 space-y-4 flex-grow flex flex-col justify-between">
+            <div>
+                <h3 class="text-2xl font-black tracking-tight text-brand-textMain mb-3 group-hover:text-brand-accent transition-colors">
+                    Social Connection App & Poster Design / 人際交流改善 App 暨競賽展覽海報
+                </h3>
+                <p class="text-brand-textSub text-sm md:text-base font-light leading-relaxed text-justify">
+                    一款改善人際互動與社交連結的 App，透過互動功能與情境設計，幫助使用者建立更好的社交體驗。本作品在激烈的全國多媒體競賽中脫穎而出，入圍 MAIC 行動應用創新賽全國總決賽。在首頁與作品 Showcase 中，完美呈現大賽宣傳影片、完整的高擬真介面原型以及大張直式參展海報，展現高水準的介面邏輯。
+                </p>
+            </div>
+            
+            {/* 標籤列 */}
+            <div class="flex flex-wrap gap-2 pt-2">
+                <span class="bg-white text-slate-600 border border-slate-200 rounded px-3 py-1 text-xs font-medium font-mono">Figma</span>
+                <span class="bg-white text-slate-600 border border-slate-200 rounded px-3 py-1 text-xs font-medium font-mono">UI/UX Research</span>
+                <span class="bg-white text-slate-600 border border-slate-200 rounded px-3 py-1 text-xs font-medium font-mono">Adobe Illustrator</span>
+                <span class="bg-white text-slate-600 border border-slate-200 rounded px-3 py-1 text-xs font-medium font-mono">MAIC Finalist</span>
+            </div>
+        </div>
+    </motion.div>
+
+                                {/* 作品 03: 視覺設計預留專區 */}
+                              
+                                {/* <motion.div 
+                                    initial={{ opacity: 0, y: 40 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true, margin: "-100px" }}
+                                    transition={{ duration: 0.8 }}
+                                    class="bg-brand-bgLight rounded-2xl p-8 md:p-16 border border-dashed border-slate-200"
+                                >
+                                    <span class="text-xs font-mono text-brand-textSub">03 / 未來加入專區</span>
+                                    <h3 class="text-xl font-bold tracking-tight mt-1 text-brand-textMain mb-4">視覺設計與內容創作 / Visual Design</h3>
+                                    <p class="text-brand-textSub font-light max-w-2xl text-sm mb-8">
+                                        未來此處將展示我將資訊轉換成容易理解且具有吸引力視覺內容的能力，包含教育型社群媒體內容、英語學習視覺設計、平面海報與視覺圖表設計。
+                                    </p>
+                                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-xs font-medium text-brand-textSub">
+                                        <div class="bg-white px-4 py-3 rounded-lg border border-slate-100">教育自媒體內容</div>
+                                        <div class="bg-white px-4 py-3 rounded-lg border border-slate-100">英語學習視覺化</div>
+                                        <div class="bg-white px-4 py-3 rounded-lg border border-slate-100">平面海報設計</div>
+                                        <div class="bg-white px-4 py-3 rounded-lg border border-slate-100">視覺溝通圖表</div>
+                                    </div>
+                                </motion.div> */}
+                                
+                            </div>
+                        </section>
+                      
+                        {/* 關於我 */}
+                        <section id="about" class="mt-56 border-t border-slate-100 pt-24 max-w-4xl">
+                            <h2 class="text-xs uppercase tracking-[0.2em] text-brand-accent font-semibold mb-6">設計理念</h2>
+                            <p class="text-2xl md:text-3xl font-light tracking-tight leading-relaxed text-brand-textMain">
+                                「我相信設計不只是解決功能問題，也是在科技與人之間建立連結。」
+                            </p>
+                            <p class="text-brand-textSub mt-6 leading-relaxed font-light text-base md:text-lg">
+                                Claudia 的設計重視使用者感受、視覺溝通與使用流暢性。善於利用 Figma 與數位設計工具，將抽象概念轉化為具備吸引力且容易理解的數位作品。
+                            </p>
+                        </section>
+                    </main>
+
+                    {/* 頁尾 */}
+                    <footer class="bg-brand-bgLight border-t border-slate-100 mt-40">
+                        <div class="max-w-7xl w-full mx-auto px-6 py-16 flex flex-col md:flex-row justify-between items-center gap-8">
+                            <span class="text-sm font-light text-brand-textSub">© 2026 Claudia Wang.</span>
+                            <div class="flex space-x-8 text-sm font-medium">
+                                <a href="mailto:your-email@example.com" class="text-brand-textSub hover:text-brand-accent transition-colors">Gmail</a>
+                                <a href="https://linkedin.com" target="_blank" class="text-brand-textSub hover:text-brand-accent transition-colors">LinkedIn</a>
+                                <a href="https://instagram.com" target="_blank" class="text-brand-textSub hover:text-brand-accent transition-colors">Instagram</a>
+                            </div>
+                        </div>
+                    </footer>
+                </div>
+            );
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<App />);
+        setTimeout(() => lucide.createIcons(), 100);
+    </script>
 </body>
 </html>
