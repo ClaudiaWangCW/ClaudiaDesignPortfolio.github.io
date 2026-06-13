@@ -14,14 +14,22 @@
         tailwind.config = {
             theme: {
                 extend: {
-                    colors: { brand: { canvas: '#FFFFFF', bgLight: '#F8FAFC', textMain: '#0F172A', textSub: '#475569', accent: '#0EA5E9' } },
+                    colors: { 
+                        brand: { 
+                            canvas: '#FFFFFF', 
+                            bgLight: '#FBFBFB', // 同步修正為溫潤的極簡暖灰
+                            textMain: '#0F172A', 
+                            textSub: '#475569', 
+                            accent: '#A3C6C4'   // 已成功套用你的質感主題色
+                        } 
+                    },
                     fontFamily: { sans: ['SF Pro Display', 'Inter', 'Noto Sans TC', 'sans-serif'] }
                 }
             }
         }
     </script>
 </head>
-<body class="bg-brand-canvas text-brand-textMain font-sans antialiased">
+<body class="bg-brand-canvas text-brand-textMain font-sans antialiased selection:bg-brand-accent selection:text-white">
     <div id="root"></div>
 
     <script type="text/babel">
@@ -46,7 +54,7 @@
 
                             {/* 右側：精簡專案資訊 */}
                             <div class="md:col-span-7 space-y-6">
-                                <span class="bg-sky-50 text-brand-accent px-3 py-1 rounded-full text-xs font-semibold tracking-wider uppercase border border-sky-100 inline-block">
+                                <span class="bg-slate-50 text-slate-500 px-3 py-1 rounded-full text-xs font-semibold tracking-wider uppercase border border-slate-200 inline-block">
                                     🏆 MAIC 行動應用創新賽 全國總決賽入圍作品
                                 </span>
                                 <h1 class="text-4xl md:text-5xl font-black tracking-tight text-brand-textMain">SocialMate</h1>
@@ -57,7 +65,7 @@
                                 <div class="grid grid-cols-2 gap-4 pt-6 text-sm border-t border-slate-100">
                                     <div><h4 class="text-slate-400 text-xs font-bold mb-1">專案類型</h4><p class="font-medium">人際交流改善 App</p></div>
                                     <div><h4 class="text-slate-400 text-xs font-bold mb-1 tracking-wider">專案成員</h4><p class="font-medium">王雨晴、廖心瑜</p></div>
-    <div><h4 class="text-slate-400 text-xs font-bold mb-1 tracking-wider">我的核心角色</h4><p class="font-medium">UI/UX 設計 & 宣傳片製作</p></div>
+                                    <div><h4 class="text-slate-400 text-xs font-bold mb-1 tracking-wider">我的核心角色</h4><p class="font-medium">UI/UX 設計 & 宣傳片製作</p></div>
                                     <div><h4 class="text-slate-400 text-xs font-bold mb-1">使用工具</h4><p class="font-medium">Figma, Final Cut Pro</p></div>
                                 </div>
                             </div>
@@ -82,7 +90,7 @@
                             </div>
                         </div>
 
-                        {/* 行動呼籲 */}
+                        {/* 3. 互動原型展示 */}
                         <div class="space-y-6 mb-24">
                             <h3 class="text-xs uppercase tracking-widest text-slate-400 font-bold">📱 SocialMate 互動式原型展示</h3>
                             <div class="w-full max-w-sm mx-auto bg-brand-bgLight p-4 rounded-2xl border border-slate-100 flex flex-col items-center shadow-sm">
