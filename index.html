@@ -30,7 +30,6 @@
                     },
                     fontFamily: {
                         sans: ['SF Pro Display', 'Inter', 'Noto Sans TC', 'sans-serif'],
-                        // 🌟 將手寫字型配置進系統中
                         cursive: ['Caveat', 'cursive'],
                     }
                 }
@@ -49,20 +48,19 @@
                 <div class="min-h-screen flex flex-col justify-between">
                     {/* 導覽列 */}
                     <nav class="max-w-7xl w-full mx-auto px-6 py-8 flex justify-between items-center">
-                        {/* 🌟 重新設計的 CW Logo：套用手寫潦草字型、放大至 3xl 展現細節，並完全套用 #A3C6C4 */}
                         <span class="text-3xl font-bold tracking-tight text-brand-accent font-cursive select-none">
                             CW
                         </span>
                         <div class="space-x-8 text-sm font-medium text-brand-textSub">
-                            <a href="index.html" class="text-brand-textMain border-b-2 border-brand-accent pb-1">我的作品</a>
+                            <a href="index.html" class="text-brand-textMain border-b-2 border-brand-accent pb-1">設計作品集</a>
                             <a href="#about" class="hover:text-brand-textMain transition-colors">關於我</a>
                         </div>
                     </nav>
 
-                    {/* 主內容區：將所有元件收回同一個滿版天際線下，全面恢復原本乾淨的純白畫布底色 */}
+                    {/* 主內容區 */}
                     <main class="max-w-7xl w-full mx-auto px-6 pt-20 flex-grow">
-                        {/* Hero 區塊 */}
-                        <header class="max-w-7xl w-full mx-auto pt-20 pb-36">
+                        {/* Hero 區塊：🌟 加上 pb-28，讓「比起純粹的技術...」下方擁有寬敞且優雅的留白空間 */}
+                        <header class="max-w-7xl w-full mx-auto pt-10 pb-28">
                             <motion.div 
                                 initial={{ opacity: 0, y: 30 }}
                                 animate={{ opacity: 1, y: 0 }}
@@ -79,10 +77,10 @@
                             </motion.div>
                         </header>
 
-                        {/* 作品列表 */}
-                        <section class="space-y-20 pb-24">
+                        {/* 作品列表：🌟 加上 pt-12，完美拉開與上方文字的黃金比例距離 */}
+                        <section class="space-y-20 pt-12 pb-24">
                             <div class="flex items-center justify-between border-b border-slate-200 pb-4">
-                                <h2 class="text-xl font-bold tracking-tight">我的設計作品</h2>
+                                <h2 class="text-xl font-bold tracking-tight">設計作品集</h2>
                                 <span class="text-xs text-brand-textSub uppercase tracking-widest">01 — 02</span>
                             </div>
 
@@ -181,7 +179,7 @@
                                 <h2 class="text-xs uppercase tracking-[0.2em] text-brand-accent font-semibold">設計理念</h2>
                                 <div class="space-y-4 max-w-3xl">
                                     <p class="text-2xl md:text-3xl font-light tracking-tight leading-relaxed text-brand-textMain">
-                                        「我相信設計不只是解決問題，也是在科技與人建立連結，並帶來好的使用體驗。」
+                                        「我相信設計不只是解決問題，也是在科技與人之間建立連結，並帶來好的使用體驗。」
                                     </p>
                                     <p class="text-brand-textSub leading-relaxed font-light text-base text-justify">
                                         Claudia 的設計重視使用者感受、視覺溝通與使用流暢性，並利用各種數位設計與AI工具，將想法變為的吸引人的數位作品。
