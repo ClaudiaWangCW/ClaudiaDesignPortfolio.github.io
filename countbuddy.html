@@ -3,53 +3,107 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CountBuddy - 畢業專題展示</title>
-    <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
-        body { background-color: #0f172a; color: #f8fafc; line-height: 1.6; padding: 40px 20px; }
-        .container { max-width: 900px; margin: 0 auto; }
-        .back-link { display: inline-block; color: #38bdf8; text-decoration: none; margin-bottom: 25px; font-weight: 500; font-size: 0.95rem; }
-        .back-link:hover { text-decoration: underline; }
-        header { margin-bottom: 40px; }
-        h1 { font-size: 2.2rem; color: #f1f5f9; margin-bottom: 5px; }
-        .tagline { color: #38bdf8; font-size: 1.1rem; font-weight: 500; }
-        .highlight-text { font-size: 1.1rem; color: #cbd5e1; margin-bottom: 30px; background-color: #1e293b; padding: 18px; border-radius: 8px; border-left: 4px solid #10b981; }
-        h2.section-title { font-size: 1.4rem; color: #f1f5f9; margin: 40px 0 15px 0; display: flex; align-items: center; }
-        h2.section-title::after { content: ""; flex: 1; margin-left: 15px; height: 1px; background-color: #334155; }
-        .media-container { background-color: #1e293b; border: 1px solid #334155; border-radius: 12px; padding: 15px; margin-bottom: 30px; box-shadow: 0 10px 25px -5px rgba(0,0,0,0.3); }
-        .video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px; }
-        .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
-        .figma-wrapper { position: relative; padding-bottom: 55%; height: 0; overflow: hidden; border-radius: 8px; }
-        .figma-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; background: #1e1e1e; }
-        .poster-img { width: 100%; height: auto; display: block; border-radius: 8px; }
-    </style>
+    <title>CountBuddy 作品展示 | Claudia Wang</title>
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/framer-motion@10.16.4/dist/framer-motion.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { brand: { canvas: '#FFFFFF', bgLight: '#F8FAFC', textMain: '#0F172A', textSub: '#475569', accent: '#0EA5E9' } },
+                    fontFamily: { sans: ['SF Pro Display', 'Inter', 'Noto Sans TC', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
 </head>
-<body>
-    <div class="container">
-        <a href="index.html" class="back-link">← 返回精選作品首頁</a>
-        <header>
-            <h1>畢業專題：《CountBuddy》遊戲化健身 App</h1>
-            <p class="tagline">✦ 數位多媒體整合設計與影音開發</p>
-        </header>
-        <p class="highlight-text">
-            💡 <b>作品簡介：</b>本專案將傳統健身與趣味遊戲化機制深度結合。下方完整呈現了本專案的<b>宣傳短片、可現場操作的互動原型、以及展覽海報</b>，展現從視覺、動態影音到介面開發的數位多媒體整合實力。
-        </p>
-        <h2 class="section-title">🎬 宣傳影片觀賞 (Promotional Video)</h2>
-        <div class="media-container">
-            <div class="video-wrapper">
-                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
-            </div>
-        </div>
-        <h2 class="section-title">📱 App 介面互動體驗 (Interactive Prototype)</h2>
-        <div class="media-container">
-            <div class="figma-wrapper">
-                <iframe src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2Fsample" allowfullscreen></iframe>
-            </div>
-        </div>
-        <h2 class="section-title">🖼️ 專案展覽海報設計 (Poster Design)</h2>
-        <div class="media-container">
-            <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=900&q=80" alt="CountBuddy 海報" class="poster-img">
-        </div>
-    </div>
+<body class="bg-brand-canvas text-brand-textMain font-sans antialiased">
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { motion } = window.Motion;
+
+        function App() {
+            return (
+                <div class="min-h-screen flex flex-col justify-between">
+                    <nav class="max-w-6xl w-full mx-auto px-6 py-8">
+                        <a href="index.html" class="inline-flex items-center gap-2 text-sm font-medium text-brand-textSub hover:text-brand-textMain transition-colors group">
+                            <i data-lucide="arrow-left" class="w-4 h-4 transition-transform group-hover:-translate-x-1"></i> 返回作品首頁
+                        </a>
+                    </nav>
+
+                    <main class="max-w-6xl w-full mx-auto px-6 pt-6 pb-32 flex-grow">
+                        {/* 🌟 海報與標題開場風 - 已修正為 CountBuddy 的內容 */}
+                        <section class="grid grid-cols-1 md:grid-cols-12 gap-12 items-center mb-32">
+                            {/* 左側：海報主角牆 */}
+                            <div class="md:col-span-5 bg-brand-bgLight p-3 rounded-2xl border border-slate-100 shadow-md">
+                                {/* 💡 提示：此處預留健身 App 海報圖片位置，你可以替換成你的海報路徑 */}
+                                <img src="images/CountBuddy-poster.jpg" alt="CountBuddy 大賽海報" class="w-full h-auto rounded-xl object-cover shadow-inner" />
+                            </div>
+
+                            {/* 右側：精簡專案資訊 */}
+                            <div class="md:col-span-7 space-y-6">
+                                <span class="bg-sky-50 text-brand-accent px-3 py-1 rounded-full text-xs font-semibold tracking-wider uppercase border border-sky-100 inline-block">
+                                    🏆 畢業專題 遊戲化健身APP
+                                </span>
+                                <h1 class="text-4xl md:text-5xl font-black tracking-tight text-brand-textMain">CountBuddy</h1>
+                                <p class="text-brand-textSub text-lg font-light leading-relaxed">
+                                    一款遊戲化健身 App，透過手環記次、運動追蹤與角色養成機制，提升使用者維持運動習慣的動機。
+                                </p>
+                                
+                                <div class="grid grid-cols-2 gap-4 pt-6 text-sm border-t border-slate-100">
+                                    <div><h4 class="text-slate-400 text-xs font-bold mb-1">專案類型</h4><p class="font-medium">遊戲化運動 App</p></div>
+                                    <div><h4 class="text-slate-400 text-xs font-bold mb-1 tracking-wider">專案成員</h4><p class="font-medium">許雅涵、王雨晴、李恩亞</p></div>
+                                    <div><h4 class="text-slate-400 text-xs font-bold mb-1 tracking-wider">我的核心角色</h4><p class="font-medium">UI/UX 設計 & 角色設計 & 宣傳片製作</p></div>
+                                    <div><h4 class="text-slate-400 text-xs font-bold mb-1">使用工具</h4><p class="font-medium">Figma, Final Cut Pro</p></div>
+                                </div>
+                            </div>
+                        </section>
+
+                        {/* 1. 產品宣傳影片 */}
+                        <div class="space-y-6 mb-24">
+                            <h3 class="text-xs uppercase tracking-widest text-slate-400 font-bold">🎬 產品宣傳影片 / Product Promotion Video</h3>
+                            <div class="bg-brand-bgLight p-4 rounded-2xl border border-slate-100 shadow-sm">
+                                <div class="relative pb-[56.25%] h-0 overflow-hidden rounded-xl bg-black">
+                                    {/* 💡 提示：請將下方 src 換成你的 CountBuddy 宣傳影片 YouTube 連結 */}
+                                    <iframe class="absolute top-0 left-0 w-full h-full border-0" src="https://www.youtube.com/embed/qM0eeYtPOug" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* 2. UI 介面 */}
+                        <div class="space-y-6 mb-24">
+                            <h3 class="text-xs uppercase tracking-widest text-slate-400 font-bold">📱 App 功能架構與 Mockup 展示</h3>
+                            <div class="bg-brand-bgLight p-6 md:p-12 rounded-2xl border border-slate-100 space-y-8 flex flex-col items-center">
+                                {/* 💡 提示：請更換成你導出的 CountBuddy Mockup 截圖路徑 */}
+                                <img src="images/CountBuddy-FunctionalMap.png" alt="CountBuddy UI 設計圖 1" class="w-full max-w-4xl h-auto rounded-lg shadow-sm" />
+                                <img src="images/CountBuddy-Mockup.png" alt="CountBuddy UI 設計圖 2" class="w-full max-w-4xl h-auto rounded-lg shadow-sm" />
+                            </div>
+                        </div>
+
+                        {/* 行動呼籲 */}
+                        <div class="text-center py-16 border-t border-slate-100">
+                            <h4 class="text-xl font-bold mb-4">探索介面細節與流程邏輯？</h4>
+                            <a href="https://figma.com" target="_blank" class="inline-flex items-center gap-2 bg-brand-textMain hover:bg-brand-accent text-white px-8 py-4 rounded-full text-sm font-medium tracking-wide transition-colors duration-300 shadow-md">
+                                開啟 Figma 互動式原型 <i data-lucide="external-link" class="w-4 h-4"></i>
+                            </a>
+                        </div>
+                    </main>
+
+                    <footer class="bg-brand-bgLight border-t border-slate-100 py-12 text-center text-xs text-brand-textSub">
+                        © 2026 Claudia Wang.
+                    </footer>
+                </div>
+            );
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<App />);
+        setTimeout(() => lucide.createIcons(), 100);
+    </script>
 </body>
 </html>
