@@ -36,6 +36,10 @@
             }
         }
     </script>
+    {/* 🌟 讓全網頁的錨點跳轉都自動套用優雅的平滑滾動效果 */}
+    <style>
+        html { scroll-behavior: smooth; }
+    </style>
 </head>
 <body class="bg-brand-canvas text-brand-textMain font-sans antialiased selection:bg-brand-accent selection:text-white">
     <div id="root"></div>
@@ -51,15 +55,17 @@
                         <span class="text-3xl font-bold tracking-tight text-brand-accent font-cursive select-none">
                             CW
                         </span>
-                        <div class="space-x-8 text-sm font-medium text-brand-textSub">
-                            <a href="index.html" class="text-brand-textMain border-b-2 border-brand-accent pb-1">設計作品集</a>
+                        {/* 🌟 調整導覽列邏輯：首頁為當前 Active 狀態（帶底線），其餘按鈕改為滑動錨點 */}
+                        <div class="space-x-6 md:space-x-8 text-sm font-medium text-brand-textSub">
+                            <a href="#" class="text-brand-textMain border-b-2 border-brand-accent pb-1">首頁</a>
+                            <a href="#projects" class="hover:text-brand-textMain transition-colors">設計作品集</a>
                             <a href="#about" class="hover:text-brand-textMain transition-colors">關於我</a>
                         </div>
                     </nav>
 
                     {/* 主內容區 */}
                     <main class="max-w-7xl w-full mx-auto px-6 pt-20 flex-grow">
-                        {/* Hero 區塊：🌟 加上 pb-28，讓「比起純粹的技術...」下方擁有寬敞且優雅的留白空間 */}
+                        {/* Hero 區塊 */}
                         <header class="max-w-7xl w-full mx-auto pt-10 pb-28">
                             <motion.div 
                                 initial={{ opacity: 0, y: 30 }}
@@ -77,8 +83,8 @@
                             </motion.div>
                         </header>
 
-                        {/* 作品列表：🌟 加上 pt-12，完美拉開與上方文字的黃金比例距離 */}
-                        <section class="space-y-20 pt-12 pb-24">
+                        {/* 作品列表：🌟 加上 id="projects" 供導覽列點擊滑動，並加上 scroll-mt-24 避免滾動後頂部太擁擠 */}
+                        <section id="projects" class="space-y-20 pt-12 pb-24 scroll-mt-24">
                             <div class="flex items-center justify-between border-b border-slate-200 pb-4">
                                 <h2 class="text-xl font-bold tracking-tight">設計作品集</h2>
                                 <span class="text-xs text-brand-textSub uppercase tracking-widest">01 — 02</span>
@@ -158,8 +164,8 @@
                             </div>
                         </section>
                       
-                        {/* 關於我 */}
-                        <section id="about" class="mt-8 border-t border-slate-100 pt-16 max-w-7xl space-y-20">
+                        {/* 關於我：🌟 補上 scroll-mt-24 確保平滑滾動落地時頂部留白完美 */}
+                        <section id="about" class="mt-8 border-t border-slate-100 pt-16 max-w-7xl space-y-20 scroll-mt-24">
                             {/* 關於我個人基本資訊 */}
                             <div class="space-y-4">
                                 <h2 class="text-xs uppercase tracking-[0.2em] text-brand-accent font-semibold">關於我</h2>
@@ -182,7 +188,8 @@
                                         「我相信設計不只是解決問題，也是在科技與人之間建立連結，並帶來好的使用體驗。」
                                     </p>
                                     <p class="text-brand-textSub leading-relaxed font-light text-base text-justify">
-                                        Claudia 的設計重視使用者感受、視覺溝通與使用流暢性，並利用各種數位設計與AI工具，將想法變為的吸引人的數位作品。
+                                        {/* 🌟 已將 Claudia 改為第一人稱「我的設計」，讀起來更親切一體 */}
+                                        我的設計重視使用者感受、視覺溝通與使用流暢性，並利用各種數位設計與 AI 工具，將想法變為吸引人的數位作品。
                                     </p>
                                 </div>
                             </div>
