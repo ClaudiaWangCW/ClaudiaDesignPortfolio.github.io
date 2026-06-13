@@ -20,10 +20,10 @@
                     colors: {
                         brand: {
                             canvas: '#FFFFFF',
-                            bgLight: '#F8FAFC',
+                            bgLight: '#FBFBFB', 
                             textMain: '#0F172A',
                             textSub: '#475569',
-                            accent: '#A3C6C4'
+                            accent: '#A3C6C4'   
                         }
                     },
                     fontFamily: {
@@ -61,12 +61,15 @@
                             class="max-w-3xl mb-32"
                         >
                             <h2 class="text-xs uppercase tracking-[0.2em] text-brand-accent font-semibold mb-4"></h2>
+                            {/* 🌟 名字成功改為綠色並加上精緻底線 */}
                             <h1 class="text-4xl md:text-6xl font-black tracking-tight leading-[1.15] text-brand-textMain mb-6">
-                                Hi!<br/>I'm Claudia Wang
+                                Hi!<br/>I'm <span class="text-brand-accent underline decoration-brand-accent underline-offset-8 decoration-2">Claudia Wang</span>
                             </h1>
-                            <p class="text-lg md:text-xl font-light text-brand-textSub leading-relaxed">
-                                我喜歡結合科技、視覺與使用者體驗，<br/>把想法轉化為容易理解且具有吸引力的數位作品。
-                            </p>
+                            {/* 🌟 修改為更具亮點的設計師定位宣言（Tagline） */}
+                            <p class="text-xl md:text-2xl font-light text-brand-textSub leading-relaxed">
+    帶著好奇心探索設計的世界，<br class="hidden md:block"/>
+    比起純粹的技術，我更在乎作品傳遞給使用者的溫度與感受。
+</p>
                         </motion.div>
 
                         {/* 作品列表 */}
@@ -78,99 +81,75 @@
 
                             <div class="space-y-32">
                                 {/* 作品 01: CountBuddy */}
-    <motion.div 
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-100px" }}
-        transition={{ duration: 0.8 }}
-        class="group cursor-pointer bg-brand-bgLight rounded-2xl overflow-hidden border border-slate-200 transition-all duration-500 hover:border-slate-300 hover:shadow-[0_30px_60px_rgba(0,0,0,0.04)] p-6 flex flex-col"
-        onClick={() => window.location.href = 'countbuddy.html'}
-    >
-        {/* 上方：媒體展示區（模仿截圖無邊框置中） */}
-        <div class="bg-slate-950 rounded-xl overflow-hidden aspect-video flex justify-center items-center w-full shadow-inner">
-            <img src="images/CountBuddy-poster.jpg" alt="CountBuddy 健身 App" class="w-full h-full object-cover opacity-90 transition-opacity duration-500 group-hover:opacity-100" />
-        </div>
-        
-        {/* 下方：文字資訊區（模仿截圖與媒體包在同一個容器內） */}
-        <div class="pt-8 pb-4 px-2 space-y-4 flex-grow flex flex-col justify-between">
-            <div>
-                <h3 class="text-2xl font-black tracking-tight text-brand-textMain mb-3 group-hover:text-brand-accent transition-colors">
-                    遊戲化健身 App
-                </h3>
-                <p class="text-brand-textSub text-sm md:text-base font-light leading-relaxed text-justify">
-                    本專案是一套融合角色養成機制的居家健身應用程式。為了解決使用者在運動初期的倦怠感，設計了直覺簡易的運動計劃與養成「肌胸肉」角色機制。除了主導完整的 UI/UX 介面設計外，更獨立完成宣傳海報設計與動態宣傳短片剪輯。
-                </p>
-            </div>
-            
-            {/* 標籤列 */}
-            <div class="flex flex-wrap gap-2 pt-2">
-                <span class="bg-white text-slate-600 border border-slate-200 rounded px-3 py-1 text-xs font-medium font-mono">Figma</span>
-                <span class="bg-white text-slate-600 border border-slate-200 rounded px-3 py-1 text-xs font-medium font-mono">Adobe Illustrator</span>
-                <span class="bg-white text-slate-600 border border-slate-200 rounded px-3 py-1 text-xs font-medium font-mono">UI/UX Design</span>
-                <span class="bg-white text-slate-600 border border-slate-200 rounded px-3 py-1 text-xs font-medium font-mono">Final Cut Pro</span>
-                <span class="bg-white text-slate-600 border border-slate-200 rounded px-3 py-1 text-xs font-medium font-mono">Animation</span>
-            </div>
-        </div>
-    </motion.div>
-
-
-    {/* 作品 02: SocialMate */}
-    <motion.div 
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-100px" }}
-        transition={{ duration: 0.8 }}
-        class="group cursor-pointer bg-brand-bgLight rounded-2xl overflow-hidden border border-slate-200 transition-all duration-500 hover:border-slate-300 hover:shadow-[0_30px_60px_rgba(0,0,0,0.04)] p-6 flex flex-col"
-        onClick={() => window.location.href = 'socialmate.html'}
-    >
-        {/* 上方：媒體展示區 */}
-        <div class="bg-slate-950 rounded-xl overflow-hidden aspect-video flex justify-center items-center w-full shadow-inner">
-            <img src="images/SocialMate-poster.png" alt="SocialMate 社交 App" class="w-full h-full object-cover opacity-90 transition-opacity duration-500 group-hover:opacity-100" />
-        </div>
-        
-        {/* 下方：文字資訊區 */}
-        <div class="pt-8 pb-4 px-2 space-y-4 flex-grow flex flex-col justify-between">
-            <div>
-                <h3 class="text-2xl font-black tracking-tight text-brand-textMain mb-3 group-hover:text-brand-accent transition-colors">
-                    人際交流改善 App
-                </h3>
-                <p class="text-brand-textSub text-sm md:text-base font-light leading-relaxed text-justify">
-                    一款改善人際互動與社交連結的 App，透過每日社交任務、AI聊天室與可愛角色互動設計，幫助使用者逐漸提升自身的社交能力。本作品在的全國行動應用創新競賽中脫穎而出，入圍 MAIC 台灣區總決賽。除了作品本身，競賽中也呈現宣傳影片、完整介面原型以及參展海報。
-                </p>
-            </div>
-            
-            {/* 標籤列 */}
-            <div class="flex flex-wrap gap-2 pt-2">
-                <span class="bg-white text-slate-600 border border-slate-200 rounded px-3 py-1 text-xs font-medium font-mono">Figma</span>
-                <span class="bg-white text-slate-600 border border-slate-200 rounded px-3 py-1 text-xs font-medium font-mono">UI/UX Research</span>
-                <span class="bg-white text-slate-600 border border-slate-200 rounded px-3 py-1 text-xs font-medium font-mono">Final Cut Pro</span>
-                <span class="bg-white text-slate-600 border border-slate-200 rounded px-3 py-1 text-xs font-medium font-mono">Animation</span>
-            </div>
-        </div>
-    </motion.div>
-
-                                {/* 作品 03: 視覺設計預留專區 */}
-                              
-                                {/* <motion.div 
+                                <motion.div 
                                     initial={{ opacity: 0, y: 40 }}
                                     whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true, margin: "-100px" }}
                                     transition={{ duration: 0.8 }}
-                                    class="bg-brand-bgLight rounded-2xl p-8 md:p-16 border border-dashed border-slate-200"
+                                    class="group cursor-pointer bg-brand-bgLight rounded-2xl overflow-hidden border border-slate-200 transition-all duration-500 hover:border-slate-300 hover:shadow-[0_30px_60px_rgba(0,0,0,0.03)] p-6 flex flex-col"
+                                    onClick={() => window.location.href = 'countbuddy.html'}
                                 >
-                                    <span class="text-xs font-mono text-brand-textSub">03 / 未來加入專區</span>
-                                    <h3 class="text-xl font-bold tracking-tight mt-1 text-brand-textMain mb-4">視覺設計與內容創作 / Visual Design</h3>
-                                    <p class="text-brand-textSub font-light max-w-2xl text-sm mb-8">
-                                        未來此處將展示我將資訊轉換成容易理解且具有吸引力視覺內容的能力，包含教育型社群媒體內容、英語學習視覺設計、平面海報與視覺圖表設計。
-                                    </p>
-                                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-xs font-medium text-brand-textSub">
-                                        <div class="bg-white px-4 py-3 rounded-lg border border-slate-100">教育自媒體內容</div>
-                                        <div class="bg-white px-4 py-3 rounded-lg border border-slate-100">英語學習視覺化</div>
-                                        <div class="bg-white px-4 py-3 rounded-lg border border-slate-100">平面海報設計</div>
-                                        <div class="bg-white px-4 py-3 rounded-lg border border-slate-100">視覺溝通圖表</div>
+                                    {/* 上方：媒體展示區 */}
+                                    <div class="bg-slate-950 rounded-xl overflow-hidden aspect-video flex justify-center items-center w-full shadow-inner">
+                                        <img src="images/CountBuddy-poster.jpg" alt="CountBuddy 健身 App" class="w-full h-full object-cover opacity-90 transition-opacity duration-500 group-hover:opacity-100" />
                                     </div>
-                                </motion.div> */}
-                                
+                                    
+                                    {/* 下方：文字資訊區 */}
+                                    <div class="pt-8 pb-4 px-2 space-y-4 flex-grow flex flex-col justify-between">
+                                        <div>
+                                            <h3 class="text-2xl font-black tracking-tight text-brand-textMain mb-3 group-hover:text-brand-accent transition-colors">
+                                                遊戲化健身 App
+                                            </h3>
+                                            <p class="text-brand-textSub text-sm md:text-base font-light leading-relaxed text-justify">
+                                                本專案是一套融合角色養成機制的居家健身應用程式。為了解決使用者在運動初期的倦怠感，設計了直覺簡易的運動計劃與養成「肌胸肉」角色機制。除了主導完整的 UI/UX 介面設計外，更獨立完成宣傳海報設計與動態宣傳短片剪輯。
+                                            </p>
+                                        </div>
+                                        
+                                        {/* 標籤列 */}
+                                        <div class="flex flex-wrap gap-2 pt-2">
+                                            <span class="bg-white text-slate-600 border border-slate-200 rounded px-3 py-1 text-xs font-medium font-mono">Figma</span>
+                                            <span class="bg-white text-slate-600 border border-slate-200 rounded px-3 py-1 text-xs font-medium font-mono">Adobe Illustrator</span>
+                                            <span class="bg-white text-slate-600 border border-slate-200 rounded px-3 py-1 text-xs font-medium font-mono">UI/UX Design</span>
+                                            <span class="bg-white text-slate-600 border border-slate-200 rounded px-3 py-1 text-xs font-medium font-mono">Final Cut Pro</span>
+                                            <span class="bg-white text-slate-600 border border-slate-200 rounded px-3 py-1 text-xs font-medium font-mono">Animation</span>
+                                        </div>
+                                    </div>
+                                </motion.div>
+
+                                {/* 作品 02: SocialMate */}
+                                <motion.div 
+                                    initial={{ opacity: 0, y: 40 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true, margin: "-100px" }}
+                                    transition={{ duration: 0.8 }}
+                                    class="group cursor-pointer bg-brand-bgLight rounded-2xl overflow-hidden border border-slate-200 transition-all duration-500 hover:border-slate-300 hover:shadow-[0_30px_60px_rgba(0,0,0,0.03)] p-6 flex flex-col"
+                                    onClick={() => window.location.href = 'socialmate.html'}
+                                >
+                                    {/* 上方：媒體展示區 */}
+                                    <div class="bg-slate-950 rounded-xl overflow-hidden aspect-video flex justify-center items-center w-full shadow-inner">
+                                        <img src="images/SocialMate-poster.png" alt="SocialMate 社交 App" class="w-full h-full object-cover opacity-90 transition-opacity duration-500 group-hover:opacity-100" />
+                                    </div>
+                                    
+                                    {/* 下方：文字資訊區 */}
+                                    <div class="pt-8 pb-4 px-2 space-y-4 flex-grow flex flex-col justify-between">
+                                        <div>
+                                            <h3 class="text-2xl font-black tracking-tight text-brand-textMain mb-3 group-hover:text-brand-accent transition-colors">
+                                                人際交流改善 App
+                                            </h3>
+                                            <p class="text-brand-textSub text-sm md:text-base font-light leading-relaxed text-justify">
+                                                一款改善人際互動與社交連結的 App，透過每日社交任務、AI聊天室與可愛角色互動設計，幫助使用者逐漸提升自身的社交能力。本作品在的全國行動應用創新競賽中脫穎而出，入圍 MAIC 台灣區總決賽。除了作品本身，競賽中也呈現宣傳影片、完整介面原型以及參展海報。
+                                            </p>
+                                        </div>
+                                        
+                                        {/* 標籤列 */}
+                                        <div class="flex flex-wrap gap-2 pt-2">
+                                            <span class="bg-white text-slate-600 border border-slate-200 rounded px-3 py-1 text-xs font-medium font-mono">Figma</span>
+                                            <span class="bg-white text-slate-600 border border-slate-200 rounded px-3 py-1 text-xs font-medium font-mono">UI/UX Research</span>
+                                            <span class="bg-white text-slate-600 border border-slate-200 rounded px-3 py-1 text-xs font-medium font-mono">Final Cut Pro</span>
+                                            <span class="bg-white text-slate-600 border border-slate-200 rounded px-3 py-1 text-xs font-medium font-mono">Animation</span>
+                                        </div>
+                                    </div>
+                                </motion.div>
                             </div>
                         </section>
                       
@@ -190,11 +169,6 @@
                     <footer class="bg-brand-bgLight border-t border-slate-100 mt-40">
                         <div class="max-w-7xl w-full mx-auto px-6 py-16 flex flex-col md:flex-row justify-between items-center gap-8">
                             <span class="text-sm font-light text-brand-textSub">© 2026 Claudia Wang.</span>
-                            {/*<div class="flex space-x-8 text-sm font-medium">
-                                <a href="mailto:your-email@example.com" class="text-brand-textSub hover:text-brand-accent transition-colors">Gmail</a>
-                                <a href="https://linkedin.com" target="_blank" class="text-brand-textSub hover:text-brand-accent transition-colors">LinkedIn</a>
-                                <a href="https://instagram.com" target="_blank" class="text-brand-textSub hover:text-brand-accent transition-colors">Instagram</a>
-                            </div>*/}
                         </div>
                     </footer>
                 </div>
